@@ -1,0 +1,20 @@
+{
+  "name": "testapi",
+  "version": "1.0.0",
+  "description": "API scrape logic with tests",
+  "main": "api.js",
+  "scripts": {
+    "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": ["api", "scrape", "test"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}

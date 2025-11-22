@@ -1,3 +1,9 @@
+/**
+ * Sends a reaction to a channel post
+ * @param {string} channelLink - The link to the channel post
+ * @param {string} emoji - The emoji reaction to send
+ * @returns {Promise<Object>} The API response
+ */
 async function sendChannelReaction(channelLink, emoji) {
   const url = "https://foreign-marna-sithaunarathnapromax-9a005c2e.koyeb.app/api/channel/react-to-post";
   
@@ -22,3 +28,24 @@ async function sendChannelReaction(channelLink, emoji) {
     "post_link": channelLink,
     "reacts": emoji
   };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error sending channel reaction:', error);
+    throw error;
+  }
+}
+
+module.exports = { sendChannelReaction };
