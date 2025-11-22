@@ -16,9 +16,11 @@
  * 7. Paste it below, replacing YOUR_JWT_TOKEN_HERE
  */
 
+const { JWT_TOKEN_PLACEHOLDER, DEFAULT_API_ENDPOINT } = require('./constants');
+
 module.exports = {
-  jwt: 'YOUR_JWT_TOKEN_HERE',
+  jwt: JWT_TOKEN_PLACEHOLDER,
   
   // API endpoint - you shouldn't need to change this
-  apiEndpoint: 'https://foreign-marna-sithaunarathnapromax-9a005c2e.koyeb.app/api/channel/react-to-post'
+  apiEndpoint: DEFAULT_API_ENDPOINT
 };

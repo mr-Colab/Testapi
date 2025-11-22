@@ -1,10 +1,9 @@
 /**
- * Configuration file for second JWT token
+ * Configuration file for third JWT token
  * 
  * INSTRUCTIONS:
- * 1. Copy this file to 'config1.js'
- * 2. Add your second account's JWT token below
- * 3. Create config2.js, config3.js, etc. for more accounts
+ * 1. Copy this file to 'config2.js'
+ * 2. Add your third account's JWT token below
  * 
  * ⚠️ WARNING: Using multiple accounts may violate Terms of Service
  * Only use this if:

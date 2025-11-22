@@ -5,7 +5,7 @@
  * 1. Create multiple config files:
  *    - cp config.example.js config.js
  *    - cp config1.example.js config1.js
- *    - cp config1.example.js config2.js
+ *    - cp config2.example.js config2.js
  *    - etc.
  * 2. Add different JWT tokens to each config file
  * 3. Run: node test-multi-token.js

@@ -16,6 +16,8 @@ const { sendChannelReaction } = require('./api-with-config');
 const fs = require('fs');
 const path = require('path');
 
+const { JWT_TOKEN_PLACEHOLDER } = require('./constants');
+
 class MultiTokenAPI {
   /**
    * Creates a multi-token API client
@@ -28,7 +30,7 @@ class MultiTokenAPI {
       console.log('⚠️  No tokens provided. Loading from config files...');
       this.tokens = this.loadTokensFromConfigs();
     } else {
-      this.tokens = tokens.filter(t => t && t !== 'YOUR_JWT_TOKEN_HERE');
+      this.tokens = tokens.filter(t => t && t !== JWT_TOKEN_PLACEHOLDER);
     }
     
     if (this.tokens.length === 0) {
@@ -68,7 +70,7 @@ class MultiTokenAPI {
       if (fs.existsSync(configPath)) {
         try {
           const config = require(configPath);
-          if (config.jwt && config.jwt !== 'YOUR_JWT_TOKEN_HERE') {
+          if (config.jwt && config.jwt !== JWT_TOKEN_PLACEHOLDER) {
             tokens.push(config.jwt);
             console.log(`✓ Loaded token from ${filename}`);
           }

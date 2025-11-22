@@ -40,10 +40,12 @@ function loadConfig() {
 async function sendChannelReaction(channelLink, emoji, customJwt = null) {
   const config = loadConfig();
   
+  const { JWT_TOKEN_PLACEHOLDER } = require('./constants');
+  
   let jwtToken;
   if (customJwt) {
     jwtToken = customJwt;
-  } else if (config && config.jwt && config.jwt !== 'YOUR_JWT_TOKEN_HERE') {
+  } else if (config && config.jwt && config.jwt !== JWT_TOKEN_PLACEHOLDER) {
     jwtToken = config.jwt;
   } else {
     throw new Error('No valid JWT token provided. Please configure config.js or pass a JWT token.');

@@ -60,10 +60,10 @@ cp config.example.js config.js
 cp config1.example.js config1.js
 
 # Third account
-cp config1.example.js config2.js
+cp config2.example.js config2.js
 
 # Fourth account (if needed)
-cp config1.example.js config3.js
+cp config.example.js config3.js
 ```
 
 #### Step 2: Get JWT tokens for each account
